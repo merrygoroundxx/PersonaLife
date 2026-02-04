@@ -1,21 +1,19 @@
-<<<<<<< HEAD
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
 # PersonaLife
 This is an app for tracking daily activities and personal growth using AI-powered persona stats. Users log activities and feelings, AI calculates boosts to 5 stats, displayed with RPG-style leveling.
->>>>>>> a4f0e8123b60954434f9fbe1eeddf80947f17e06
+
+**Tech Stack**: React + Vite + Tailwind CSS + Capacitor (mobile)
+
+## Architecture
+- **Screens**: Home (overview), AddActivity (form), Calendar (entries), Stats (progress bars), Settings (export/import)
+- **Data Flow**: User input → Gemini AI → localStorage persistence + stat aggregation
+- **Mobile/Desktop**: Capacitor syncs web build to native, Electron packages web app
+- **Key Files**: 
+  - `src/App.jsx`: Main component with screens and state management
+
+
+## Critical Workflows
+- **Development**: `npm run dev` (Vite dev server)
+- **Web Build**: `npm run build` (outputs to `dist/`)
+- **Mobile**: `npx cap sync android` then `npx cap run android` (after build)
+- **Desktop**: `npm run electron:build` (electron-builder to `release/`)
+
